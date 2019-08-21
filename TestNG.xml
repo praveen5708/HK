@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name = "hobbyKing_V1">
+
+<listeners>
+
+<listener class-name="hobbyKing.utilities.Reporting" />
+
+</listeners>
+
+	<test name = "HobbyKing Test">
+	
+	<parameter name = "browser" value = "chrome" />
+	
+		<classes>
+			
+			<!-- <class name = "hobbyKing.testCase.TC001_Login" > -->
+			<class name = "hobbyKing.testCase.TC002_PaypalOrder" />
+			<!-- <class name = "hobbyKing.testCase.TC003_WorldpayOrder" /> -->
+				<!-- <methods>
+					Worldpay
+					<include name = "login" />
+					<include name = "addProduct" />
+					<include name = "setCart" />
+					<include name = "worldpayPayment" />
+					<include name = "getOrderID" />
+			
+				</methods> -->
+		</classes>
+		
+	</test>
+	
+
+</suite>
