@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="hobbyKing_V1" duration-ms="291767" started-at="2019-08-21T10:14:44Z" finished-at="2019-08-21T10:19:36Z">
+  <suite name="hobbyKing_V1" duration-ms="34399" started-at="2019-08-29T09:36:26Z" finished-at="2019-08-29T09:37:00Z">
     <groups>
     </groups>
-    <test name="HobbyKing Test" duration-ms="291767" started-at="2019-08-21T10:14:44Z" finished-at="2019-08-21T10:19:36Z">
-      <class name="hobbyKing.testCase.TC002_PaypalOrder">
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:hobbyKing.testCase.TC002_PaypalOrder@124ac145]" name="setup" is-config="true" duration-ms="11014" started-at="2019-08-21T10:14:44Z" finished-at="2019-08-21T10:14:56Z">
+    <test name="HobbyKing Test" duration-ms="34399" started-at="2019-08-29T09:36:26Z" finished-at="2019-08-29T09:37:00Z">
+      <class name="hobbyKing.testCase.TC001_Login">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:hobbyKing.testCase.TC001_Login@7915bca3]" name="setup" is-config="true" duration-ms="12689" started-at="2019-08-29T09:36:27Z" finished-at="2019-08-29T09:36:39Z">
           <params>
             <param index="0">
               <value>
@@ -18,35 +18,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="login()[pri:0, instance:hobbyKing.testCase.TC002_PaypalOrder@124ac145]" name="login" is-config="true" duration-ms="26184" started-at="2019-08-21T10:14:56Z" finished-at="2019-08-21T10:15:22Z">
+        <test-method status="PASS" signature="login()[pri:0, instance:hobbyKing.testCase.TC001_Login@7915bca3]" name="login" duration-ms="2476" started-at="2019-08-29T09:36:39Z" finished-at="2019-08-29T09:36:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="paypalOrder()[pri:0, instance:hobbyKing.testCase.TC002_PaypalOrder@124ac145]" name="paypalOrder" duration-ms="108769" started-at="2019-08-21T10:15:22Z" finished-at="2019-08-21T10:17:10Z">
+        <test-method status="PASS" signature="verifyOrderNumberInGmail()[pri:1, instance:hobbyKing.testCase.TC001_Login@7915bca3]" name="verifyOrderNumberInGmail" duration-ms="17724" started-at="2019-08-29T09:36:42Z" finished-at="2019-08-29T09:37:00Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- paypalOrder -->
-        <test-method status="PASS" signature="signOut()[pri:0, instance:hobbyKing.testCase.TC002_PaypalOrder@124ac145]" name="signOut" is-config="true" duration-ms="5464" started-at="2019-08-21T10:17:11Z" finished-at="2019-08-21T10:17:16Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- signOut -->
-        <test-method status="PASS" signature="login()[pri:0, instance:hobbyKing.testCase.TC002_PaypalOrder@124ac145]" name="login" is-config="true" duration-ms="53596" started-at="2019-08-21T10:17:16Z" finished-at="2019-08-21T10:18:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- login -->
-        <test-method status="PASS" signature="worldpaylOrder()[pri:1, instance:hobbyKing.testCase.TC002_PaypalOrder@124ac145]" name="worldpaylOrder" duration-ms="80560" started-at="2019-08-21T10:18:10Z" finished-at="2019-08-21T10:19:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- worldpaylOrder -->
-        <test-method status="PASS" signature="signOut()[pri:0, instance:hobbyKing.testCase.TC002_PaypalOrder@124ac145]" name="signOut" is-config="true" duration-ms="4946" started-at="2019-08-21T10:19:30Z" finished-at="2019-08-21T10:19:35Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- signOut -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:hobbyKing.testCase.TC002_PaypalOrder@124ac145]" name="tearDown" is-config="true" duration-ms="786" started-at="2019-08-21T10:19:35Z" finished-at="2019-08-21T10:19:36Z">
+        </test-method> <!-- verifyOrderNumberInGmail -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:hobbyKing.testCase.TC001_Login@7915bca3]" name="tearDown" is-config="true" duration-ms="804" started-at="2019-08-29T09:37:00Z" finished-at="2019-08-29T09:37:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- hobbyKing.testCase.TC002_PaypalOrder -->
+      </class> <!-- hobbyKing.testCase.TC001_Login -->
     </test> <!-- HobbyKing Test -->
   </suite> <!-- hobbyKing_V1 -->
 </testng-results>

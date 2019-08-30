@@ -9,9 +9,12 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -29,13 +32,17 @@ public class BaseClass {
 	public String hkusername = readconfig.getHKUserName();
 	public String hkpassword = readconfig.getHKPassword();
 	
+	//gmailLogin_Login
+	public String gmailid = readconfig.getGmailId();
+	public String gmailpassword = readconfig.getGmailPassword();
+	public String gmailsubject = readconfig.getGmailSubject();
+	
 	//addItemToCart_HomePage
 	public String productid = readconfig.getProductID();
 	
 	//setPersonalInfoAustraliaUser
 	public String hkfname = readconfig.getHKFirstname();
 	public String hklname = readconfig.getHKLastname();
-	public String cname = readconfig.getCompanyName();
 	public String telephone = readconfig.getTelephone();
 	public String addr = readconfig.getAddress();
 	public String country = readconfig.getCountryName();

@@ -38,7 +38,7 @@ public class TC003_WorldpayOrder extends BaseClass{
 	Thread.sleep(5000);
 	homepage.addItemToCart(productid);
 	homepage.clickCheckoutIcon();
-	personalinfo.setPersonalInfoAustraliaUser(hkfname, hklname, cname, telephone, addr, country, state, suburb);
+	personalinfo.setPersonalInfoAustraliaUser(hkfname, hklname, telephone, addr, country, state, suburb);
 	checkout.setCheckOutAsWorldpay();
 	payment.setWordlpayPayment(worldpaycardnumber, worldpayexpirymonth, worldpayexpiryyear, worldpaysecuritycode);
 	payment.getOrderNumber();

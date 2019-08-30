@@ -9,6 +9,7 @@ import hobbyKing.pageObjects.HomePage;
 import hobbyKing.pageObjects.Login;
 import hobbyKing.pageObjects.Payment;
 import hobbyKing.pageObjects.PersonalInfo;
+import hobbyKing.pageObjects.YourCart;
 
 public class TC002_PaypalOrder extends BaseClass {
 	
@@ -37,27 +38,25 @@ public class TC002_PaypalOrder extends BaseClass {
 	
 	homepage.addItemToCart(productid);
 	homepage.clickCheckoutIcon();
-	personalinfo.setPersonalInfoAustraliaUser(hkfname, hklname, cname, telephone, addr, country, state, suburb);
+	personalinfo.setPersonalInfoAustraliaUser(hkfname, hklname, telephone, addr, country, state, suburb);
 	checkout.setCheckOutAsPaypal();
 	payment.setPaypalPayment(paypalemail, paypalpassword);
 	payment.getOrderNumber();
 	}
 	
-	@Test(priority=1)
-	public void worldpaylOrder() throws InterruptedException
-	{
-	HomePage homepage = new HomePage(driver);
-	PersonalInfo personalinfo = new PersonalInfo(driver);
-	CheckOut checkout =new CheckOut(driver);
-	Payment payment = new Payment(driver);
-	
-	Thread.sleep(5000);
-	homepage.addItemToCart(productid);
-	homepage.clickCheckoutIcon();
-	personalinfo.setPersonalInfoAustraliaUser(hkfname, hklname, cname, telephone, addr, country, state, suburb);
-	checkout.setCheckOutAsWorldpay();
-	payment.setWordlpayPayment(worldpaycardnumber, worldpayexpirymonth, worldpayexpiryyear, worldpaysecuritycode);
-	payment.getOrderNumber();
-	}
+//	@Test
+//	public void expressPaypalOrder() throws InterruptedException
+//	{
+//		HomePage homepage = new HomePage(driver);
+//		Payment payment = new Payment(driver);
+//		YourCart yourcart = new YourCart(driver);
+//		PersonalInfo personalinfo = new PersonalInfo(driver);
+//		
+//		homepage.addItemToCart(productid);
+//		yourcart.expressPaypalPayment();
+//		personalinfo.setPersonalInfoAustraliaUser(hkfname, hklname, telephone, addr, country, state, suburb);
+//		payment.setPaypalPayment(paypalemail, paypalpassword);
+//		payment.getOrderNumber();
+//	}
 	
 }

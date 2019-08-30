@@ -28,10 +28,6 @@ public WebDriver ldriver;
 	@CacheLookup
 	WebElement txtLastName;
 	
-	@FindBy(id="billing:company")
-	@CacheLookup
-	WebElement txtCompanyName;
-	
 	@FindBy(name="billing[telephone]")
 	@CacheLookup
 	WebElement txtTelephone;
@@ -92,7 +88,11 @@ public WebDriver ldriver;
 	@CacheLookup
 	WebElement btnContinue;
 	
-	public void setPersonalInfoAustraliaUser(String fname, String lname, String cname, String telephone, String addr, String country, String state, String suburb) throws InterruptedException
+	@FindBy(xpath="//div[@id='billing-buttons-container']//button[@id='continue_button']")
+	@CacheLookup
+	WebElement btnExpressPaypalContinue;
+	
+	public void setPersonalInfoAustraliaUser(String fname, String lname, String telephone, String addr, String country, String state, String suburb) throws InterruptedException
 	{
 		
 		txtFirstName.clear();
@@ -100,9 +100,6 @@ public WebDriver ldriver;
 		
 		txtLastName.clear();
 		txtLastName.sendKeys(lname);
-		
-		txtCompanyName.clear();
-		txtCompanyName.sendKeys(cname);
 		
 		txtTelephone.clear();
 		txtTelephone.sendKeys(telephone);
@@ -125,9 +122,29 @@ public WebDriver ldriver;
 		drpZip.click();
 		drpSelectZip.click();
 		
-		btnContinue.click();
+		if(checkContinueButton("bvalueContinueButton")==true)
+		{
+			btnContinue.click();
+		}
+		else
+		{
+			btnExpressPaypalContinue.click();
+		}
 		
 		Thread.sleep(10000);
+	}
+	
+	public boolean checkContinueButton(String bvalueContinueButton)
+	{
+		try
+		{
+			btnContinue.isDisplayed();
+			return true;
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
 	}
 
 }

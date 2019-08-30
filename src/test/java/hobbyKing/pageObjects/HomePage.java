@@ -41,14 +41,15 @@ public WebDriver ldriver;
 	
 	public void addItemToCart(String productid) throws InterruptedException
 	{
+		WebDriverWait wdw=new WebDriverWait(ldriver, 10);
 		txtMainSearch.sendKeys(productid);
 		Actions ac=new Actions(ldriver);
 		ac.sendKeys(Keys.ENTER).build().perform();
-		Thread.sleep(5000);
+		wdw.until(ExpectedConditions.visibilityOf(btnAddToCart));
 		btnAddToCart.click();
-		Thread.sleep(5000);
+		Thread.sleep(4000);
 		btnCart.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 	}
 	
 	public void clickCheckoutIcon() throws InterruptedException
@@ -56,7 +57,7 @@ public WebDriver ldriver;
 		WebDriverWait wait = new WebDriverWait(ldriver, 10);
 		btnCheckout=wait.until(ExpectedConditions.visibilityOf(btnCheckout));
 		btnCheckout.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 	}
 
 }

@@ -15,4 +15,10 @@ public class TC001_Login extends BaseClass {
 		login.setLogin(hkusername, hkpassword);		
 	}
 
+	@Test(priority=1)
+	public void verifyOrderNumberInGmail() throws InterruptedException
+	{
+		Login login = new Login(driver);
+		login.gmailLogin(gmailid, gmailpassword, gmailsubject);
+	}
 }

@@ -34,7 +34,7 @@ public class ReadConfig {
 		return url;
 	}
 
-	//setPersonalInfoAustraliaUser_PersonalInfo
+	//setLogin_Login
 	public String getHKUserName()
 	{
 		String hkusername = pro.getProperty("hkusername");
@@ -47,6 +47,26 @@ public class ReadConfig {
 		return hkpassword;
 	}
 	
+	//gmailLogin_Login
+	public String getGmailId()
+	{
+		String gmailid=pro.getProperty("gmailid");
+		return gmailid;
+	}
+	
+	public String getGmailPassword()
+	{
+		String gmailpassword=pro.getProperty("gmailpassword");
+		return gmailpassword;
+	}
+	
+	public String getGmailSubject()
+	{
+		String gmailsubject=pro.getProperty("gmailsubject");
+		return gmailsubject;
+	}
+	
+	//setPersonalInfoAustraliaUser_PersonalInfo
 	public String getHKFirstname()
 	{
 		String hkkfname=pro.getProperty("hkfname");
@@ -57,12 +77,6 @@ public class ReadConfig {
 	{
 		String hkklname=pro.getProperty("hklname");
 		return hkklname;
-	}
-	
-	public String getCompanyName()
-	{
-		String cname=pro.getProperty("cname");
-		return cname;
 	}
 	
 	public String getTelephone()
