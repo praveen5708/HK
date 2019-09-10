@@ -10,17 +10,21 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import hobbyKing.testCase.BaseClass;
+
 public class Payment {
 	
+	
+
 	public WebDriver ldriver;
 	
 	public Payment(WebDriver rdriver)
 	{
 		ldriver=rdriver;
 		PageFactory.initElements(rdriver, this);
-	}
+	}	
 	
-	//Paypal
+		//Paypal
 		@FindBy(xpath="//input[@id='email']")
 		@CacheLookup
 		WebElement txtPaypalEmail;
@@ -67,6 +71,11 @@ public class Payment {
 		@CacheLookup
 		WebElement lblOrderNumber;
 		
+		BaseClass baseclass = new BaseClass();
+		
+		static String OrderNumber = null;
+		static String WindowHandle;
+		
 		//Paypal
 		public void setPaypalPayment(String paypalemail, String paypalpassword) throws InterruptedException
 		{
@@ -80,8 +89,10 @@ public class Payment {
 			
 			btnPaypalLogIn.click();
 			
-			Thread.sleep(15000);
+			Thread.sleep(20000);
 			btnPayNow.click();
+			
+			baseclass.getWindowHandles();
 		}
 		
 		//Worldpay
@@ -114,13 +125,16 @@ public class Payment {
 			ldriver.switchTo().defaultContent();
 			
 			Thread.sleep(5000);
+			
+			baseclass.getWindowHandles();
 		}
 		
 		//Completed Order Number
-		public void getOrderNumber()
+		public String getOrderNumber()
 		{
-			String OrderNumber = lblOrderNumber.getText();
-			System.out.println("YOUR ORDER NUMBER IS "+OrderNumber);
+			OrderNumber = lblOrderNumber.getText();
+			return OrderNumber;
 		}
+		
 
 }

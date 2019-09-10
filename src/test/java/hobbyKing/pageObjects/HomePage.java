@@ -39,6 +39,15 @@ public WebDriver ldriver;
 	@CacheLookup
 	WebElement btnCheckout;
 	
+	//Select Country
+	@FindBy(xpath="//div[@class='store-language-container']//div[@class='js-change-location-header']")
+	WebElement drpCountry;
+	
+	@FindBy(xpath="//div[@class='store-language-container']//input[@placeholder='Enter Country...']")
+	WebElement txtCountry;
+	
+	
+	
 	public void addItemToCart(String productid) throws InterruptedException
 	{
 		WebDriverWait wdw=new WebDriverWait(ldriver, 10);

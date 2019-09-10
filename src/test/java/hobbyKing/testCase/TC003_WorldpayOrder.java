@@ -5,6 +5,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import hobbyKing.pageObjects.CheckOut;
+import hobbyKing.pageObjects.Gmail;
 import hobbyKing.pageObjects.HomePage;
 import hobbyKing.pageObjects.Login;
 import hobbyKing.pageObjects.Payment;
@@ -27,7 +28,7 @@ public class TC003_WorldpayOrder extends BaseClass{
 		login.setSignOut();
 	}
 	
-	@Test
+	@Test(priority=0)
 	public void worldpaylOrder() throws InterruptedException
 	{
 	HomePage homepage = new HomePage(driver);
@@ -42,6 +43,17 @@ public class TC003_WorldpayOrder extends BaseClass{
 	checkout.setCheckOutAsWorldpay();
 	payment.setWordlpayPayment(worldpaycardnumber, worldpayexpirymonth, worldpayexpiryyear, worldpaysecuritycode);
 	payment.getOrderNumber();
+	}
+	
+	@Test(priority=1)
+	public void verifyOrderNumberInGmail() throws InterruptedException
+	{
+		Gmail gmail = new Gmail(driver);
+		
+		gmail.setGmailLogin(gmailid, gmailpassword);
+		gmail.setGmailSubject(newordergmailsubject);
+		gmail.getOrderNumberFromEmail();
+		gmail.verifyOrderNumber();
 	}
 
 }

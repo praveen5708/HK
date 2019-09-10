@@ -47,7 +47,7 @@ public class ReadConfig {
 		return hkpassword;
 	}
 	
-	//gmailLogin_Login
+	//setGmailLogin_Login
 	public String getGmailId()
 	{
 		String gmailid=pro.getProperty("gmailid");
@@ -60,9 +60,10 @@ public class ReadConfig {
 		return gmailpassword;
 	}
 	
+	//setGmailSubject_Login
 	public String getGmailSubject()
 	{
-		String gmailsubject=pro.getProperty("gmailsubject");
+		String gmailsubject=pro.getProperty("newordergmailsubject");
 		return gmailsubject;
 	}
 	

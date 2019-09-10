@@ -72,33 +72,6 @@ public WebDriver ldriver;
 	@CacheLookup
 	WebElement logHomePage;
 	
-	//loginGmail
-	@FindBy(id="identifierId")
-	@CacheLookup
-	WebElement txtGmailID;
-	
-	@FindBy(xpath="//span[@class='RveJvd snByac']")
-	@CacheLookup
-	WebElement btnGmailNext;
-	
-	@FindBy(name="password")
-	@CacheLookup
-	WebElement txtGmailPassword;
-	
-	@FindBy(xpath="//span[contains(text(),'Next')]")
-	@CacheLookup
-	WebElement btnGmailNext2;
-	
-	@FindBy(xpath="//span[@class='bog']")
-	@CacheLookup
-	List<WebElement> lstClickEmail;
-	
-	@FindBy(xpath="//span[@class='gb_Ba gbii']")
-	@CacheLookup
-	WebElement imgGmailProfileLogo;
-
-
-	
 	public void setLogin(String hkusername, String hkpassword) throws InterruptedException
 	{
 		WebDriverWait wait=new WebDriverWait(ldriver, 10);
@@ -109,16 +82,16 @@ public WebDriver ldriver;
 			icnClose.click();
 			Thread.sleep(2000);
 			btnAcceptAndClose.click();
-//			wait.until(ExpectedConditions.visibilityOf(lblSignIn));
-//			lblSignIn.click();
-//			wait.until(ExpectedConditions.visibilityOf(txtUserName));
-//			txtUserName.sendKeys(hkusername);
-//			wait.until(ExpectedConditions.visibilityOf(btnNext));
-//			btnNext.click();
-//			wait.until(ExpectedConditions.visibilityOf(txtPassword));
-//			txtPassword.sendKeys(hkpassword);
-//			wait.until(ExpectedConditions.visibilityOf(btnSignIn));
-//			btnSignIn.click();
+			wait.until(ExpectedConditions.visibilityOf(lblSignIn));
+			lblSignIn.click();
+			wait.until(ExpectedConditions.visibilityOf(txtUserName));
+			txtUserName.sendKeys(hkusername);
+			wait.until(ExpectedConditions.visibilityOf(btnNext));
+			btnNext.click();
+			wait.until(ExpectedConditions.visibilityOf(txtPassword));
+			txtPassword.sendKeys(hkpassword);
+			wait.until(ExpectedConditions.visibilityOf(btnSignIn));
+			btnSignIn.click();
 		}
 			else
 			{
@@ -150,48 +123,11 @@ public WebDriver ldriver;
 		try {
 			icnClose.isDisplayed();
         } catch (Exception e) {
-            System.out.println("Close icon is not present.");
+            
             return false;
         }
 
         return true;
-	}
-	
-	public void gmailLogin(String gmailid, String gmailpassword, String emailsubject) throws InterruptedException
-	{
-
-		Actions actions = new Actions(ldriver);
-		((JavascriptExecutor) ldriver).executeScript("window.open('http://gmail.com/','_blank');");
-		
-		ArrayList<String> newTab = new ArrayList<String>(ldriver.getWindowHandles());
-		ldriver.switchTo().window(newTab.get(1));
-		
-		explicitWait(ldriver, txtGmailID);
-		txtGmailID.sendKeys(gmailid);
-		
-		explicitWait(ldriver, btnGmailNext);
-		btnGmailNext.click();
-		
-		explicitWait(ldriver, txtGmailPassword);
-		actions.moveToElement(txtGmailPassword);
-		actions.click();
-		actions.sendKeys(gmailpassword, Keys.ENTER);
-		actions.build().perform();
-		
-		explicitWait(ldriver, imgGmailProfileLogo);
-		
-		for(int i=0; i < lstClickEmail.size(); i++)
-		{
-			if (lstClickEmail.get(i).getText().contains(emailsubject))
-			{
-				lstClickEmail.get(i).click();
-				break;
-			}
-		}
-		
-		
-		Thread.sleep(5000);
-
 	}
 	
 	public void explicitWait(WebDriver ldriver, WebElement element)

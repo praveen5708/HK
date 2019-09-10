@@ -32,10 +32,12 @@ public class BaseClass {
 	public String hkusername = readconfig.getHKUserName();
 	public String hkpassword = readconfig.getHKPassword();
 	
-	//gmailLogin_Login
+	//setGmailLogin_Login
 	public String gmailid = readconfig.getGmailId();
 	public String gmailpassword = readconfig.getGmailPassword();
-	public String gmailsubject = readconfig.getGmailSubject();
+	
+	//setGmailSubject_Login
+	public String newordergmailsubject = readconfig.getGmailSubject();
 	
 	//addItemToCart_HomePage
 	public String productid = readconfig.getProductID();
@@ -58,6 +60,8 @@ public class BaseClass {
 	public String worldpayexpirymonth=readconfig.getWorldpaylExpiryMonth();
 	public String worldpayexpiryyear=readconfig.getWorldpayExpiryYear();
 	public String worldpaysecuritycode=readconfig.getWorldpaylSecurityCode();
+	
+	public static String WindowHandle;
 
 	public static WebDriver driver;
 
@@ -103,6 +107,12 @@ public class BaseClass {
 	{
 		String generatedString1=RandomStringUtils.randomAlphabetic(8);
 		return generatedString1;
+	}
+	
+	public String getWindowHandles()
+	{
+		WindowHandle = driver.getWindowHandle();
+		return WindowHandle;
 	}
 
 }

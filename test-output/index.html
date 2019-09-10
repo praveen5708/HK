@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-hobbyKing_V1">
-              <span class="suite-name border-passed">hobbyKing_V1</span>
+              <span class="suite-name border-skipped">hobbyKing_V1</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">4 methods,  1 skipped,  3 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-hobbyKing_V1" class="hide-methods skipped suite-hobbyKing_V1"> (hide)</a> <!-- hide-methods skipped suite-hobbyKing_V1 -->
+                      <a href="#" panel-name="suite-hobbyKing_V1" class="show-methods skipped suite-hobbyKing_V1"> (show)</a> <!-- show-methods skipped suite-hobbyKing_V1 -->
+                    </span>
+                    <div class="method-list-content skipped suite-hobbyKing_V1">
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-hobbyKing_V1" title="hobbyKing.testCase.TC003_WorldpayOrder" hash-for-method="verifyOrderNumberInGmail">verifyOrderNumberInGmail</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-hobbyKing_V1 -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,12 +116,17 @@
                     <div class="method-list-content passed suite-hobbyKing_V1">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-hobbyKing_V1" title="hobbyKing.testCase.TC001_Login" hash-for-method="login">login</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-hobbyKing_V1" title="hobbyKing.testCase.TC002_PaypalOrder" hash-for-method="paypalOrder">paypalOrder</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-hobbyKing_V1" title="hobbyKing.testCase.TC001_Login" hash-for-method="verifyOrderNumberInGmail">verifyOrderNumberInGmail</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-hobbyKing_V1" title="hobbyKing.testCase.TC002_PaypalOrder" hash-for-method="verifyOrderNumberInGmail">verifyOrderNumberInGmail</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-hobbyKing_V1" title="hobbyKing.testCase.TC003_WorldpayOrder" hash-for-method="worldpaylOrder">worldpaylOrder</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-hobbyKing_V1 -->
@@ -122,17 +141,77 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-hobbyKing_V1" class="panel hobbyKing_V1">
-          <div class="suite-hobbyKing_V1-class-passed">
+          <div class="suite-hobbyKing_V1-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">hobbyKing.testCase.TC001_Login</span>
+              <img src="skipped.png"/>
+              <span class="class-name">hobbyKing.testCase.TC003_WorldpayOrder</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="login">
-                  </a> <!-- login -->
-                  <span class="method-name">login</span>
+                  <a name="verifyOrderNumberInGmail">
+                  </a> <!-- verifyOrderNumberInGmail -->
+                  <span class="method-name">verifyOrderNumberInGmail</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@class=&apos;sign-in-link item&apos;]&quot;}
+  (Session info: chrome=76.0.3809.132)
+  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 10.0.18362 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-ETUKTDK&apos;, ip: &apos;192.168.98.13&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_201&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\user2\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:52118}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 76.0.3809.132, webStorageEnabled: true}
+Session ID: 40be4d2817314a4bb12a133acde005ce
+*** Element info: {Using=xpath, value=//a[@class=&apos;sign-in-link item&apos;]}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy13.click(Unknown Source)
+	at hobbyKing.pageObjects.Login.setLogin(Login.java:98)
+	at hobbyKing.testCase.TC003_WorldpayOrder.login(TC003_WorldpayOrder.java:20)
+... Removed 32 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-hobbyKing_V1-class-skipped -->
+          <div class="suite-hobbyKing_V1-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">hobbyKing.testCase.TC003_WorldpayOrder</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="worldpaylOrder">
+                  </a> <!-- worldpaylOrder -->
+                  <span class="method-name">worldpaylOrder</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-hobbyKing_V1-class-passed -->
+          <div class="suite-hobbyKing_V1-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">hobbyKing.testCase.TC002_PaypalOrder</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="paypalOrder">
+                  </a> <!-- paypalOrder -->
+                  <span class="method-name">paypalOrder</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -160,7 +239,8 @@
   &lt;test thread-count=&quot;5&quot; name=&quot;HobbyKing Test&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;hobbyKing.testCase.TC001_Login&quot;/&gt;
+      &lt;class name=&quot;hobbyKing.testCase.TC002_PaypalOrder&quot;/&gt;
+      &lt;class name=&quot;hobbyKing.testCase.TC003_WorldpayOrder&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- HobbyKing Test --&gt;
 &lt;/suite&gt; &lt;!-- hobbyKing_V1 --&gt;
@@ -174,7 +254,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">HobbyKing Test (1 class)</span>
+                <span class="test-name">HobbyKing Test (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -200,20 +280,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyOrderNumberInGmail')
-data.setCell(0, 2, 'hobbyKing.testCase.TC001_Login')
-data.setCell(0, 3, 17724);
+data.setCell(0, 1, 'paypalOrder')
+data.setCell(0, 2, 'hobbyKing.testCase.TC002_PaypalOrder')
+data.setCell(0, 3, 101797);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'login')
-data.setCell(1, 2, 'hobbyKing.testCase.TC001_Login')
-data.setCell(1, 3, 2476);
+data.setCell(1, 1, 'worldpaylOrder')
+data.setCell(1, 2, 'hobbyKing.testCase.TC003_WorldpayOrder')
+data.setCell(1, 3, 68312);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'verifyOrderNumberInGmail')
+data.setCell(2, 2, 'hobbyKing.testCase.TC002_PaypalOrder')
+data.setCell(2, 3, 17044);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'verifyOrderNumberInGmail')
+data.setCell(3, 2, 'hobbyKing.testCase.TC003_WorldpayOrder')
+data.setCell(3, 3, 0);
 window.suiteTableData['hobbyKing_V1']= { tableData: data, tableDiv: 'times-div-hobbyKing_V1'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 20 seconds</span>
+              <span class="suite-total-time">Total running time: 3 minutes</span>
               <div id="times-div-hobbyKing_V1">
               </div> <!-- times-div-hobbyKing_V1 -->
             </div> <!-- times-div -->
@@ -239,23 +327,75 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">hobbyKing.testCase.TC001_Login</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">hobbyKing.testCase.TC003_WorldpayOrder</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">verifyOrderNumberInGmail</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">hobbyKing.testCase.TC002_PaypalOrder</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setup(chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
-              <div class="test-method">
+              <div class="configuration-method before">
                 <span class="method-name">login</span>
-                <span class="method-start">12785 ms</span>
+                <span class="method-start">18157 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">paypalOrder</span>
+                <span class="method-start">35951 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">signOut</span>
+                <span class="method-start">137770 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">hobbyKing.testCase.TC003_WorldpayOrder</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setup(chrome)</span>
+                <span class="method-start">144038 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">login</span>
+                <span class="method-start">161633 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">worldpaylOrder</span>
+                <span class="method-start">177624 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">signOut</span>
+                <span class="method-start">245938 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">hobbyKing.testCase.TC002_PaypalOrder</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">login</span>
+                <span class="method-start">253068 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyOrderNumberInGmail</span>
-                <span class="method-start">15295 ms</span>
+                <span class="method-start">273211 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-class after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">33021 ms</span>
-              </div> <!-- configuration-class after -->
+              <div class="configuration-method after">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">signOut</span>
+                <span class="method-start">290257 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">hobbyKing.testCase.TC003_WorldpayOrder</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">login</span>
+                <span class="method-start">305908 ms</span>
+              </div> <!-- configuration-method before -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
