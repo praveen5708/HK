@@ -7,15 +7,15 @@
   <test thread-count="5" name="HobbyKing Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="hobbyKing.testCase.TC003_WorldpayOrder">
+      <class name="hobbyKing.testCase.TC002_PaypalOrder">
         <methods>
           <include name="tearDown"/>
-          <include name="verifyOrderNumberInGmail"/>
           <include name="setup"/>
-          <include name="signOut"/>
           <include name="login"/>
+          <include name="paypalOrder"/>
+          <include name="signOut"/>
         </methods>
-      </class> <!-- hobbyKing.testCase.TC003_WorldpayOrder -->
+      </class> <!-- hobbyKing.testCase.TC002_PaypalOrder -->
     </classes>
   </test> <!-- HobbyKing Test(failed) -->
 </suite> <!-- Failed suite [hobbyKing_V1] -->

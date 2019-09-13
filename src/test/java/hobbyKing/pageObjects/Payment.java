@@ -1,6 +1,9 @@
 package hobbyKing.pageObjects;
 
+import java.time.Duration;
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,6 +11,8 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import hobbyKing.testCase.BaseClass;
@@ -37,7 +42,7 @@ public class Payment {
 		@CacheLookup
 		WebElement btnPaypalLogIn;
 		
-		@FindBy(xpath="//input[@id='confirmButtonTop']")
+		@FindBy(id="confirmButtonTop")
 		@CacheLookup
 		WebElement btnPayNow;
 		
@@ -80,19 +85,67 @@ public class Payment {
 		public void setPaypalPayment(String paypalemail, String paypalpassword) throws InterruptedException
 		{
 			WebDriverWait wait = new WebDriverWait(ldriver, 10);
-			txtPaypalEmail=wait.until(ExpectedConditions.visibilityOf(txtPaypalEmail));
-			txtPaypalEmail.clear();
-			txtPaypalEmail.sendKeys(paypalemail);
 			
-			txtPaypalPassword.click();
-			txtPaypalPassword.sendKeys(paypalpassword);
+			if (paypalChek("p1") == true)
+			{
+				txtPaypalEmail=wait.until(ExpectedConditions.visibilityOf(txtPaypalEmail));
+				txtPaypalEmail.clear();
+				txtPaypalEmail.sendKeys(paypalemail);
+				
+				txtPaypalPassword.click();
+				txtPaypalPassword.sendKeys(paypalpassword);
+				
+				btnPaypalLogIn.click();
+				Thread.sleep(10000);
+				
+				Wait<WebDriver> wait2 = new FluentWait<WebDriver>(ldriver)
+					    .withTimeout(Duration.ofSeconds(100))
+					    .pollingEvery(Duration.ofMillis(600))
+					    .ignoring(NoSuchElementException.class);
+				
+				btnPayNow = wait2.until(new Function<WebDriver, WebElement>() 
+				{
+				  public WebElement apply(WebDriver ldriver) {
+					  btnPayNow.click();
+					  return btnPayNow;
+				}
+				});
+				
+				baseclass.getWindowHandles();
+			}
+			else
+			{
+				Wait<WebDriver> wait2 = new FluentWait<WebDriver>(ldriver)
+					    .withTimeout(Duration.ofSeconds(100))
+					    .pollingEvery(Duration.ofMillis(600))
+					    .ignoring(NoSuchElementException.class);
+				
+				btnPayNow = wait2.until(new Function<WebDriver, WebElement>() 
+				{
+				  public WebElement apply(WebDriver ldriver) {
+					  btnPayNow.click();
+					  return btnPayNow;
+				}
+				});
+				
+				baseclass.getWindowHandles();
+			}
+			}
 			
-			btnPaypalLogIn.click();
 			
-			Thread.sleep(20000);
-			btnPayNow.click();
 			
-			baseclass.getWindowHandles();
+		
+		public boolean paypalChek(String p1)
+		{
+			try
+			{
+				txtPaypalEmail.isDisplayed();
+				return true;
+			}
+			catch(Exception e)
+			{
+				return false;
+			}
 		}
 		
 		//Worldpay

@@ -28,7 +28,7 @@ public class TC003_WorldpayOrder extends BaseClass{
 		login.setSignOut();
 	}
 	
-	@Test(priority=0)
+	@Test
 	public void worldpaylOrder() throws InterruptedException
 	{
 	HomePage homepage = new HomePage(driver);
@@ -45,7 +45,7 @@ public class TC003_WorldpayOrder extends BaseClass{
 	payment.getOrderNumber();
 	}
 	
-	@Test(priority=1)
+	@Test(dependsOnMethods = { "worldpaylOrder" })
 	public void verifyOrderNumberInGmail() throws InterruptedException
 	{
 		Gmail gmail = new Gmail(driver);

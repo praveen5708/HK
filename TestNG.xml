@@ -9,7 +9,7 @@
 
 </listeners>
 
-	<test name = "HobbyKing Test">
+	<test name = "HobbyKing Test" group-by-instances="true">
 	
 	<parameter name = "browser" value = "chrome" />
 	
@@ -17,7 +17,7 @@
 			
 			<!-- <class name = "hobbyKing.testCase.TC001_Login" /> -->
 			<class name = "hobbyKing.testCase.TC002_PaypalOrder" />
-			<class name = "hobbyKing.testCase.TC003_WorldpayOrder" />
+			<!-- <class name = "hobbyKing.testCase.TC003_WorldpayOrder" /> -->
 			<!-- <class name = "hobbyKing.testCase.TC004_ExpressPaypalOrder" /> -->
 				<!-- <methods>
 					Worldpay

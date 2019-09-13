@@ -3,6 +3,7 @@ package hobbyKing.pageObjects;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.poi.EmptyFileException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -111,11 +112,17 @@ public WebDriver ldriver;
 	
 	public void setSignOut()
 	{
+		try
+		{
 		WebDriverWait wait=new WebDriverWait(ldriver, 10);
 		drpSignOut=wait.until(ExpectedConditions.visibilityOf(drpSignOut));
 		drpSignOut.click();
 		optSignOut=wait.until(ExpectedConditions.visibilityOf(optSignOut));
 		optSignOut.click();
+		} catch (Exception e){
+			System.out.println("  13 alert. no alert-window");
+		}
+		
 	}
 	
 	public boolean existsElement(String bblcIconClose)
