@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [hobbyKing_V1]">
+<suite name="Failed suite [hobbyKing_V1]" guice-stage="DEVELOPMENT">
   <listeners>
     <listener class-name="hobbyKing.utilities.Reporting"/>
   </listeners>
   <test thread-count="5" name="HobbyKing Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="hobbyKing.testCase.TC002_PaypalOrder">
+      <class name="hobbyKing.testCase.TC001_Login2">
         <methods>
           <include name="tearDown"/>
-          <include name="setup"/>
-          <include name="login"/>
-          <include name="paypalOrder"/>
+          <include name="homePage"/>
           <include name="signOut"/>
+          <include name="setup"/>
+          <include name="Act"/>
         </methods>
-      </class> <!-- hobbyKing.testCase.TC002_PaypalOrder -->
+      </class> <!-- hobbyKing.testCase.TC001_Login2 -->
     </classes>
   </test> <!-- HobbyKing Test(failed) -->
 </suite> <!-- Failed suite [hobbyKing_V1] -->

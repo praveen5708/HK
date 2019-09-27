@@ -9,15 +9,33 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">hobbyKing_V1</th></tr>
-<tr><td><a href="#t0">HobbyKing Test</a></td><td class="num">0</td><td class="num attn">1</td><td class="num">0</td><td class="num">20,830</td><td></td><td></td></tr>
+<tr><td><a href="#t0">HobbyKing Test</a></td><td class="num">1</td><td class="num">0</td><td class="num attn">1</td><td class="num">73,703</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">hobbyKing_V1</th></tr></tbody><tbody id="t0"><tr><th colspan="4">HobbyKing Test &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">hobbyKing.testCase.TC002_PaypalOrder</td><td><a href="#m0">paypalOrder</a></td><td rowspan="1">1568348858191</td><td rowspan="1">0</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">hobbyKing_V1</th></tr></tbody><tbody id="t0"><tr><th colspan="4">HobbyKing Test &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">hobbyKing.testCase.TC001_Login2</td><td><a href="#m0">signOut</a></td><td rowspan="1">1569566314250</td><td rowspan="1">30137</td></tr><tr><th colspan="4">HobbyKing Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">hobbyKing.testCase.TC001_Login2</td><td><a href="#m1">Act</a></td><td rowspan="1">1569566301848</td><td rowspan="1">12395</td></tr><tr><th colspan="4">HobbyKing Test &#8212; skipped (configuration methods)</th></tr><tr class="skippedeven"><td rowspan="1">hobbyKing.testCase.TC001_Login2</td><td><a href="#m2">tearDown</a></td><td rowspan="1">1569566344389</td><td rowspan="1">0</td></tr><tr><th colspan="4">HobbyKing Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">hobbyKing.testCase.TC001_Login2</td><td><a href="#m3">homePage</a></td><td rowspan="1">1569566290409</td><td rowspan="1">5931</td></tr></tbody>
 </table>
-<h2>HobbyKing Test</h2><h3 id="m0">hobbyKing.testCase.TC002_PaypalOrder#paypalOrder</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.RuntimeException: java.lang.NullPointerException
-Caused by: java.lang.NullPointerException
-	at hobbyKing.utilities.XLUtils.getCellData(XLUtils.java:60)
-	at hobbyKing.testCase.TC002_PaypalOrder.getData(TC002_PaypalOrder.java:81)
-	... 22 more
-... Removed 30 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>HobbyKing Test</h2><h3 id="m0">hobbyKing.testCase.TC001_Login2#signOut</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248)
+	at java.base/java.util.Objects.checkIndex(Objects.java:372)
+	at java.base/java.util.ArrayList.get(ArrayList.java:458)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at com.sun.proxy.$Proxy19.get(Unknown Source)
+	at hobbyKing.pageObjects.Login2.flipkartLogout(Login2.java:271)
+	at hobbyKing.testCase.TC001_Login2.signOut(TC001_Login2.java:31)
+... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">hobbyKing.testCase.TC001_Login2#Act</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.IndexOutOfBoundsException: Index 577 out of bounds for length 577
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248)
+	at java.base/java.util.Objects.checkIndex(Objects.java:372)
+	at java.base/java.util.ArrayList.get(ArrayList.java:458)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at com.sun.proxy.$Proxy19.get(Unknown Source)
+	at hobbyKing.pageObjects.Login2.clickCategory(Login2.java:292)
+	at hobbyKing.testCase.TC001_Login2.Act(TC001_Login2.java:66)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">hobbyKing.testCase.TC001_Login2#tearDown</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">hobbyKing.testCase.TC001_Login2#homePage</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>praveensmile.kumar@gmail.com</td><td>Praveen@123</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

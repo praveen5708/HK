@@ -15,8 +15,8 @@
 	
 		<classes>
 			
-			<!-- <class name = "hobbyKing.testCase.TC001_Login" /> -->
-			<class name = "hobbyKing.testCase.TC002_PaypalOrder" />
+			<class name = "hobbyKing.testCase.TC001_Login2" />
+			<!-- <class name = "hobbyKing.testCase.TC002_PaypalOrder" /> -->
 			<!-- <class name = "hobbyKing.testCase.TC003_WorldpayOrder" /> -->
 			<!-- <class name = "hobbyKing.testCase.TC004_ExpressPaypalOrder" /> -->
 				<!-- <methods>

@@ -1,6 +1,9 @@
 package hobbyKing.pageObjects;
 
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +16,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -22,11 +26,11 @@ import org.testng.annotations.Test;
 import hobbyKing.utilities.XLUtils;
 
 
-public class Login {
+public class Login2 {
 	
 public WebDriver ldriver;
 	
-	public Login(WebDriver rdriver)
+	public Login2(WebDriver rdriver)
 	{
 		ldriver=rdriver;
 		PageFactory.initElements(rdriver, this);
@@ -79,7 +83,11 @@ public WebDriver ldriver;
 	public
 	WebElement logHomePage;
 	
-	@Test(dataProvider = "LoginData")
+	@FindBys(@FindBy(tagName="a"))
+	@CacheLookup
+	List<WebElement> getAllLinks;
+	
+//	@Test(dataProvider = "LoginData")
 	public void setLogin(String hkusername, String hkpassword) throws InterruptedException
 	{
 		WebDriverWait wait=new WebDriverWait(ldriver, 10);
@@ -117,22 +125,22 @@ public WebDriver ldriver;
 			  }
 	}
 	
-	@DataProvider(name = "LoginData")
-	public String[][] getData() throws IOException {
-		String path = System.getProperty("user.dir") + "/src/test/java/hobbyKing/testData/LoginData.xlsx";
-
-		int rowcount = XLUtils.getRowCount(path, "Sheet1");
-		int colcount = XLUtils.getCellCount(path, "Sheet1", 1);
-
-		String logindata[][] = new String[rowcount][colcount];
-
-		for (int i = 1; i <= rowcount; i++) {
-			for (int j = 0; j < colcount; j++) {
-				logindata[i - 1][j] = XLUtils.getCellData(path, "Sheet1", i, j);
-			}
-		}
-		return logindata;
-	}
+//	@DataProvider(name = "LoginData")
+//	public String[][] getData() throws IOException {
+//		String path = System.getProperty("user.dir") + "/src/test/java/hobbyKing/testData/LoginData.xlsx";
+//
+//		int rowcount = XLUtils.getRowCount(path, "Sheet1");
+//		int colcount = XLUtils.getCellCount(path, "Sheet1", 1);
+//
+//		String logindata[][] = new String[rowcount][colcount];
+//
+//		for (int i = 1; i <= rowcount; i++) {
+//			for (int j = 0; j < colcount; j++) {
+//				logindata[i - 1][j] = XLUtils.getCellData(path, "Sheet1", i, j);
+//			}
+//		}
+//		return logindata;
+//	}
 	
 	
 	public void setSignOut()
@@ -140,10 +148,10 @@ public WebDriver ldriver;
 		try
 		{
 		WebDriverWait wait=new WebDriverWait(ldriver, 10);
-		drpSignOut=wait.until(ExpectedConditions.visibilityOf(drpSignOut));
-		drpSignOut.click();
-		optSignOut=wait.until(ExpectedConditions.visibilityOf(optSignOut));
-		optSignOut.click();
+//		drpSignOut=wait.until(ExpectedConditions.visibilityOf(drpSignOut));
+//		drpSignOut.click();
+//		optSignOut=wait.until(ExpectedConditions.visibilityOf(optSignOut));
+//		optSignOut.click();
 		} catch (Exception e){
 			System.out.println("  13 alert. no alert-window");
 		}
@@ -172,6 +180,124 @@ public WebDriver ldriver;
 		catch(Exception e)
 		{
 			e.printStackTrace();
+		}
+	}
+	
+	public void verifyLinks() throws IOException
+	{
+		int s = getAllLinks.size();
+		
+		System.out.println(s);
+		
+		for(int i=0; i<=s; i++)
+		{
+			WebElement element = getAllLinks.get(i);
+			String url = element.getAttribute("href");
+			
+			URL link = new URL(url);
+			
+			HttpURLConnection conn = (HttpURLConnection) link.openConnection();
+			
+			conn.connect();
+			
+			int respcode = conn.getResponseCode();
+			
+			if(respcode>=400)
+			{
+				System.out.println(url +" - " + " Valid");
+			}
+			else
+			{
+				System.out.println(url +" - " + " Not Valid");
+			}
+			
+		}
+	}
+	
+	//Flipkart
+	
+	//login
+	@FindBy(xpath="(//input[@type='text'])[2]")
+	@CacheLookup
+	WebElement ui;
+	
+	@FindBy(xpath="//input[@type='password']")
+	@CacheLookup
+	WebElement pw;
+	
+	@FindBy(xpath="(//button[@type='submit'])[2]")
+	@CacheLookup
+	WebElement li;
+	
+	//logout
+	@FindBy(xpath="(//*[contains(@class,'_2aUbKa')])[1]")
+	@CacheLookup
+	WebElement pr;
+	
+	@FindBys(@FindBy(xpath="//*[contains(@class,'_1-qoxT')]"))
+	@CacheLookup
+	List<WebElement> lo;
+	
+	//click product
+	
+	@FindBy(xpath="(//*[contains(@class,'_1QZ6fC')])[1]")
+	WebElement prd;
+	
+	@FindBys(@FindBy(xpath="//*[contains(@class,'_1KCOnI')]"))
+	@CacheLookup
+	List<WebElement> prd1;
+	
+
+	public void flipkart(String uii, String pww) throws InterruptedException
+	{
+//		ldriver.switchTo().frame(fr);
+		ui.sendKeys(uii);
+		pw.sendKeys(pww);
+		li.click();
+		Thread.sleep(5000);
+//		ldriver.switchTo().defaultContent();
+	}
+	
+	public void flipkartLogout() throws InterruptedException
+	{
+		Actions action = new Actions(ldriver);
+		action.moveToElement(pr).perform();
+		
+		int s =lo.size();
+		System.out.print(s);
+		
+		for(int i=0; i<=s; i++)
+		{
+			WebElement element = lo.get(i);
+			String ss = element.getText();
+			
+			if(ss.equals("Logout"))
+			{
+				element.click();
+				Thread.sleep(5000);
+				break;
+			}
+		}
+	}
+	
+	public void clickCategory() throws InterruptedException
+	{
+		Actions actions = new Actions(ldriver);
+		actions.moveToElement(prd).perform();
+		
+		int s2 = prd1.size();
+		
+		for(int i=0; i<=s2; i++)
+		{
+			WebElement element = prd1.get(i);
+			String category = element.getText();
+			
+			if(category.equals("Mobiles"))
+			{
+				element.click();
+				Thread.sleep(2000);
+				break;
+			}
 		}
 	}
 

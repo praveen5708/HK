@@ -132,9 +132,6 @@ public class Payment {
 			}
 			}
 			
-			
-			
-		
 		public boolean paypalChek(String p1)
 		{
 			try
